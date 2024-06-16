@@ -116,8 +116,6 @@ param_grid_ridge = {
     'alpha': [0.1, 1.0, 10.0, 100.0]
 }
 # extratreetRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import r2_score
 from sklearn.tree import ExtraTreeRegressor
 extra = ExtraTreeRegressor()
 extra.fit(x_train,y_train)
@@ -139,8 +137,6 @@ score_best_ridge = r2_score(y_test, y_pred_best_ridge)
 print("Best Ridge R2 Score: ", score_best_ridge)
 
 # RandomForestRegressor with Grid Search CV
-from sklearn.ensemble import RandomForestRegressor
-
 random = RandomForestRegressor(random_state=42)
 random.fit(x_train_scaled, y_train)
 y_pred_rand = random.predict(x_test_scaled)
